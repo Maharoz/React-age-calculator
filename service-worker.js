@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/React-age-calculator/precache-manifest.358983808692deac5832e8f0f1d8e80a.js"
+  "/React-age-calculator/precache-manifest.ac00e08e02f1bceefb65864ea33ebfa0.js"
 );
 
 workbox.clientsClaim();
