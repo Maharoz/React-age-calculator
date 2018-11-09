@@ -1,13 +1,8 @@
 import React from 'react';
 import moment from 'moment';
-// import Helmet from 'react-helmet';
-import Moment from 'react-moment';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
-
 import './DatePicker.css';
-
-import { formatDate, parseDate } from 'react-day-picker/moment';
 
  class DatePicker extends React.Component {
 
@@ -28,12 +23,12 @@ import { formatDate, parseDate } from 'react-day-picker/moment';
     const timeEnd =moment();
     const diff = timeEnd.diff(startDate);
     const diffDuration = moment.duration(diff);
-    console.log("Total Duration in millis:", diffDuration.asMilliseconds());
-    console.log("Years:", diffDuration.years());
-    console.log("Days:", diffDuration.days());
-    console.log("Hours:", diffDuration.hours());
-    console.log("Minutes:", diffDuration.minutes());
-    console.log("Seconds:", diffDuration.seconds());
+    // console.log("Total Duration in millis:", diffDuration.asMilliseconds());
+    // console.log("Years:", diffDuration.years());
+    // console.log("Days:", diffDuration.days());
+    // console.log("Hours:", diffDuration.hours());
+    // console.log("Minutes:", diffDuration.minutes());
+    // console.log("Seconds:", diffDuration.seconds());
     const year =diffDuration.years();
     const days = diffDuration.days();
     const hours = diffDuration.hours();
@@ -41,10 +36,12 @@ import { formatDate, parseDate } from 'react-day-picker/moment';
     const seconds = diffDuration.seconds();
     return (
       <div>
+
         {selectedDay && <p>Day: {selectedDay.toLocaleDateString()}</p>}
         {!selectedDay && <p>Choose a day</p>}
         <DayPickerInput onDayChange={this.handleDayChange} />
-        <h1>Your Age is {year} year  {days} days  {hours} hours  {minutes} minutes {seconds} seconds </h1>
+        <p>Type your birthday in YYYY-MM-DD format</p>
+        <h1>Your Age is {year} years  {days} days  {hours} hours  {minutes} minutes {seconds} seconds </h1>
       </div>
     );
   }
