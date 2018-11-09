@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
-import 'react-day-picker/lib/style.css';
+// import 'react-day-picker/lib/style.css';
 import './DatePicker.css';
 
  class DatePicker extends React.Component {
@@ -30,6 +30,7 @@ import './DatePicker.css';
     // console.log("Minutes:", diffDuration.minutes());
     // console.log("Seconds:", diffDuration.seconds());
     const year =diffDuration.years();
+    const month =diffDuration.months();
     const days = diffDuration.days();
     const hours = diffDuration.hours();
     const minutes = diffDuration.minutes();
@@ -38,10 +39,34 @@ import './DatePicker.css';
       <div>
 
         {selectedDay && <p>Day: {selectedDay.toLocaleDateString()}</p>}
-        {!selectedDay && <p>Choose a day</p>}
+        {!selectedDay && <h3>Choose a day</h3>}
+        <div className="Result">
+
         <DayPickerInput onDayChange={this.handleDayChange} />
-        <p>Type your birthday in YYYY-MM-DD format</p>
-        <h1>Your Age is {year} years  {days} days  {hours} hours  {minutes} minutes {seconds} seconds </h1>
+        </div>
+        
+        <h3 className="Result">Type your birthday in YYYY-MM-DD format</h3>
+        <h1 className="Result">Your Age is {year} years {month} months {days} days  {hours} hours  {minutes} minutes {seconds} seconds </h1>
+
+   <div class="footer Result">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <p>
+                    Developed with love by <a target="_blank" href="https://sites.google.com/view/porfoliomaharoz/home">Maharoz Alam</a> (<a target="_blank" href="https://sites.google.com/view/porfoliomaharoz/home">Mugdho)</a>
+                </p>
+                <p>
+                    <a target="_blank" href="https://github.com/Maharoz/React-age-calculator">Get Source Code</a>
+                </p>
+            </div>
+            <div class="col-md-6 text-right">
+                {/* <p>
+                    <a target="_blank" href="https://github.com/Maharoz/React-age-calculator">Get Source Code</a>
+                </p> */}
+            </div>
+        </div>
+    </div>
+</div>
       </div>
     );
   }
